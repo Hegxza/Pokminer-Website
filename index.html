@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PokMiner – Download the free 2D mining game for Windows</title>
+  <meta name="description" content="PokMiner is a free 2D pixel mining and crafting game for Windows. Mine deep, craft gear, explore 9 biomes and play with friends over LAN.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="PokMiner – free 2D mining game">
+  <meta property="og:description" content="Mine deep, craft gear, explore 9 biomes and play with friends over LAN. Free for Windows.">
+  <meta property="og:image" content="https://hegxza.github.io/Pokminer-Website/assets/shots/forest.png">
+  <meta name="theme-color" content="#0d1b3d">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/PressStart2P.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="topbar-logo" href="#top" aria-label="PokMiner home">
+      <img src="assets/title.png" alt="PokMiner" width="1024" height="385">
+    </a>
+    <nav class="topbar-links" aria-label="Sections">
+      <a href="#features">Features</a>
+      <a href="#screenshots">Screenshots</a>
+      <a href="#install">Install</a>
+      <a href="#versions">Versions</a>
+    </nav>
+    <a class="btn btn-small" href="#download">Download</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="download">
+      <div class="hero-inner">
+        <h1 class="hero-title">
+          <img src="assets/title.png" alt="PokMiner" width="1024" height="385">
+        </h1>
+        <p class="hero-tagline">Dig, build and explore an endless pixel world.</p>
+        <p class="hero-text">
+          PokMiner is a free 2D mining and crafting game for Windows.
+          It's in alpha, so new updates land often (and so do the bugs made by Cactoking).
+        </p>
+
+        <div class="download-box">
+          <a class="btn btn-big" id="download-button" href="https://github.com/Hegxza/Pokminer-Releases/releases">
+            <img src="assets/icons/iron_pickaxe.png" alt="" width="16" height="16">
+            <span id="download-label">Download for Windows</span>
+          </a>
+          <p class="download-meta" id="download-meta">Windows 10 / 11 · free</p>
+          <p class="download-alt">
+            <a href="https://github.com/Hegxza/Pokminer-Releases/releases">All releases on GitHub</a>
+          </p>
+        </div>
+
+        <div class="news" id="news" hidden>
+          <h2 class="news-title">What's new</h2>
+          <p id="news-text"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <h2 class="section-title">What you can do</h2>
+      <div class="features">
+        <article class="feature">
+          <img src="assets/icons/deepslate_diamond_ore.png" alt="" width="16" height="16">
+          <h3>Mine deep</h3>
+          <p>Dig through stone, deepslate and Goredstone layers, from coal and iron down to diamonds and rarer ores.</p>
+        </article>
+        <article class="feature">
+          <img src="assets/icons/crafting.png" alt="" width="16" height="16">
+          <h3>Craft and smelt</h3>
+          <p>Discover new recipes, build a crafting table, smelt ores in a furnace and forge gear at the anvil.</p>
+        </article>
+        <article class="feature">
+          <img src="assets/icons/dirt_grass.png" alt="" width="32" height="32">
+          <h3>Endless world</h3>
+          <p>9 biomes, from birch forests to red deserts and snowy spruce forests. The world keeps generating as you explore.</p>
+        </article>
+        <article class="feature">
+          <img src="assets/icons/iron_pickaxe.png" alt="" width="16" height="16">
+          <h3>Skill tree</h3>
+          <p>Spend XP on Mining and Fighting skills. Every branch makes you choose a path for good.</p>
+        </article>
+        <article class="feature">
+          <img src="assets/icons/iron_sword.png" alt="" width="16" height="16">
+          <h3>Play with friends</h3>
+          <p>Host a world on your local network or join a friend by address. Chat, explore together or fight it out.</p>
+        </article>
+        <article class="feature">
+          <img src="assets/icons/coin.png" alt="" width="55" height="55">
+          <h3>Missions</h3>
+          <p>Cave Survival, Parkour, Dungeon Exploration and Escape Room missions earn you coins for the shop.</p>
+        </article>
+        <article class="feature">
+          <img src="assets/icons/gold_ring_eme.png" alt="" width="48" height="48">
+          <h3>Rings and pendants</h3>
+          <p>Equip accessories that boost your health, mining speed, regeneration or jumps.</p>
+        </article>
+        <article class="feature">
+          <img src="assets/icons/music_disc_peace.png" alt="" width="102" height="103">
+          <h3>Music discs</h3>
+          <p>Collect music discs and play them in a jukebox, even with friends in multiplayer.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="screenshots">
+      <h2 class="section-title">Screenshots</h2>
+      <div class="gallery">
+        <button class="shot shot-wide" type="button" data-full="assets/shots/forest.png">
+          <img src="assets/shots/forest.png" alt="The player standing in a sunny forest biome" width="1280" height="720" loading="lazy">
+        </button>
+        <button class="shot" type="button" data-full="assets/shots/snowy-night.png">
+          <img src="assets/shots/snowy-night.png" alt="A snowy spruce forest at night" width="1280" height="720" loading="lazy">
+        </button>
+        <button class="shot" type="button" data-full="assets/shots/red-desert.png">
+          <img src="assets/shots/red-desert.png" alt="A red desert under the night sky" width="1280" height="720" loading="lazy">
+        </button>
+        <button class="shot" type="button" data-full="assets/shots/skills.png">
+          <img src="assets/shots/skills.png" alt="The skill tree with Mining and Fighting tabs" width="1280" height="720" loading="lazy">
+        </button>
+        <button class="shot" type="button" data-full="assets/shots/inventory.png">
+          <img src="assets/shots/inventory.png" alt="The inventory with crafting grid, recipes and accessory slots" width="1280" height="720" loading="lazy">
+        </button>
+      </div>
+    </section>
+
+    <section class="section" id="install">
+      <h2 class="section-title">How to install</h2>
+      <ol class="steps">
+        <li>
+          <h3>Download</h3>
+          <p>Click <a href="#download">Download</a>. You get a single <code>.exe</code> file, no installer needed.</p>
+        </li>
+        <li>
+          <h3>Run it</h3>
+          <p>Windows may say <em>"Windows protected your PC"</em> because the game isn't signed. Click <strong>More info</strong>, then <strong>Run anyway</strong>.</p>
+        </li>
+        <li>
+          <h3>Play</h3>
+          <p>Keep the file somewhere handy, like your Desktop. The main menu tells you when a new version is out.</p>
+        </li>
+      </ol>
+      <div class="requirements">
+        <h3>Requirements</h3>
+        <ul>
+          <li>Windows 10 or 11 (64-bit)</li>
+          <li>Keyboard and mouse</li>
+          <li>Languages: English, Polski</li>
+        </ul>
+        <p class="note">
+          Some antivirus programs wrongly flag single-file games like this one.
+          Only download PokMiner from this page or the official GitHub releases.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" id="versions">
+      <h2 class="section-title">All versions</h2>
+      <p class="section-lead">Want to try an older build? Every public version is still available.</p>
+      <ul class="versions" id="version-list">
+        <li class="versions-empty">
+          See the <a href="https://github.com/Hegxza/Pokminer-Releases/releases">full release list on GitHub</a>.
+        </li>
+      </ul>
+    </section>
+
+    <section class="section community">
+      <h2 class="section-title">Join the community</h2>
+      <p class="section-lead">Report bugs, share builds and hear about updates first.</p>
+      <div class="community-links">
+        <a class="btn" href="https://discord.gg/aEc6sbJDqJ" rel="noopener">Discord</a>
+        <a class="btn btn-quiet" href="https://docs.google.com/forms/d/e/1FAIpQLSfBHVgTsvfmKEEQEIBpklTqxjag6eiGccnGDsBsxj2GMhBZ-Q/viewform?usp=header" rel="noopener">Send feedback</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Made by Hegxza · PokMiner is in alpha</p>
+    <p class="footer-small">Font: Press Start 2P (<a href="assets/fonts/OFL.txt">SIL Open Font License</a>)</p>
+  </footer>
+
+  <dialog class="viewer" id="viewer" aria-label="Screenshot">
+    <img id="viewer-image" src="" alt="">
+    <button class="viewer-close" type="button" aria-label="Close">×</button>
+  </dialog>
+</body>
+</html>
