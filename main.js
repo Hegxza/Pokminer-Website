@@ -76,7 +76,7 @@ async function showReleaseDetails(downloadUrl) {
     const asset = (release.assets || []).find((a) => a.browser_download_url === downloadUrl);
     if (asset) {
       const parts = ["Windows 10 / 11", formatSize(asset.size), formatDate(release.published_at)];
-      document.getElementById("download-meta").textContent = parts.join(" · ");
+      document.getElementById("download-meta").textContent = parts.join(" - ");
       return;
     }
   }
