@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PokMiner – Download the free 2D mining game for Windows</title>
-  <meta name="description" content="PokMiner is a free 2D pixel mining and crafting game for Windows. Mine deep, craft gear, explore 9 biomes and play with friends over LAN.">
+  <title>PokMiner – Download the free 2D mining game</title>
+  <meta name="description" content="PokMiner is a free 2D pixel mining and crafting game for Windows, macOS and Linux. Mine deep, craft gear, explore 9 biomes and play with friends over LAN.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="PokMiner – free 2D mining game">
-  <meta property="og:description" content="Mine deep, craft gear, explore 9 biomes and play with friends over LAN. Free for Windows.">
+  <meta property="og:description" content="Mine deep, craft gear, explore 9 biomes and play with friends over LAN. Free for Windows, macOS and Linux.">
   <meta property="og:image" content="https://hegxza.github.io/Pokminer-Website/assets/shots/forest.png">
   <meta name="theme-color" content="#0d1b3d">
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -38,17 +38,52 @@
         </h1>
         <p class="hero-tagline">Dig, build and explore an endless pixel world.</p>
         <p class="hero-text">
-          PokMiner is a free 2D mining and crafting game for Windows.
+          PokMiner is a free 2D mining and crafting game for Windows, macOS and Linux.
           It's in alpha, so new updates land often (and so do the bugs made by Cacto).
         </p>
 
-        <div class="download-box">
-          <a class="btn btn-big" id="download-button" href="https://github.com/Hegxza/Pokminer-Releases/releases">
-            <img src="assets/icons/iron_pickaxe.png" alt="" width="16" height="16">
-            <span id="download-label">Download for Windows</span>
-          </a>
-          <p class="download-meta" id="download-meta">Windows 10 / 11 - free</p>
+        <div class="download-box" aria-labelledby="download-title">
+          <h2 class="download-title" id="download-title">Download Alpha 1.3.8</h2>
+          <p class="download-description">Choose your system. Download the game to play directly, or use the launcher to install and update it.</p>
+          <table class="downloads-table">
+            <thead>
+              <tr>
+                <th scope="col">Platform</th>
+                <th scope="col">Game</th>
+                <th scope="col">Launcher</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Windows 64-bit</th>
+                <td><a class="download-action" href="https://github.com/Hegxza/Pokminer-Releases/releases/download/alpha-1.3.8/PokMiner-Alpha-1.3.8-windows-x64.zip" aria-label="Download game for Windows 64-bit, ZIP">ZIP</a></td>
+                <td><a class="download-action" href="https://github.com/Hegxza/Pokminer-Releases/releases/download/alpha-1.3.8/PokMiner-Launcher-1.3-windows-x64.zip" aria-label="Download launcher for Windows 64-bit, ZIP">ZIP</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Windows 32-bit</th>
+                <td><a class="download-action" href="https://github.com/Hegxza/Pokminer-Releases/releases/download/alpha-1.3.8/PokMiner-Alpha-1.3.8-windows-x86.zip" aria-label="Download game for Windows 32-bit, ZIP">ZIP</a></td>
+                <td><a class="download-action" href="https://github.com/Hegxza/Pokminer-Releases/releases/download/alpha-1.3.8/PokMiner-Launcher-1.3-windows-x86.zip" aria-label="Download launcher for Windows 32-bit, ZIP">ZIP</a></td>
+              </tr>
+              <tr>
+                <th scope="row">macOS Intel</th>
+                <td><a class="download-action" href="https://github.com/Hegxza/Pokminer-Releases/releases/download/alpha-1.3.8/PokMiner-Alpha-1.3.8-macos-x64.zip" aria-label="Download game for macOS Intel, ZIP">ZIP</a></td>
+                <td><a class="download-action" href="https://github.com/Hegxza/Pokminer-Releases/releases/download/alpha-1.3.8/PokMiner-Launcher-1.3-macos-x64.zip" aria-label="Download launcher for macOS Intel, ZIP">ZIP</a></td>
+              </tr>
+              <tr>
+                <th scope="row">macOS Apple Silicon</th>
+                <td><a class="download-action" href="https://github.com/Hegxza/Pokminer-Releases/releases/download/alpha-1.3.8/PokMiner-Alpha-1.3.8-macos-arm64.zip" aria-label="Download game for macOS Apple Silicon, ZIP">ZIP</a></td>
+                <td><a class="download-action" href="https://github.com/Hegxza/Pokminer-Releases/releases/download/alpha-1.3.8/PokMiner-Launcher-1.3-macos-arm64.zip" aria-label="Download launcher for macOS Apple Silicon, ZIP">ZIP</a></td>
+              </tr>
+              <tr>
+                <th scope="row">Linux 64-bit</th>
+                <td><a class="download-action" href="https://github.com/Hegxza/Pokminer-Releases/releases/download/alpha-1.3.8/PokMiner-Alpha-1.3.8-linux-x64.zip" aria-label="Download game for Linux 64-bit, ZIP">ZIP</a></td>
+                <td><a class="download-action" href="https://github.com/Hegxza/Pokminer-Releases/releases/download/alpha-1.3.8/PokMiner-Launcher-1.3-linux-x64.tar.gz" aria-label="Download launcher for Linux 64-bit, TAR.GZ">TAR.GZ</a></td>
+              </tr>
+            </tbody>
+          </table>
           <p class="download-alt">
+            <a href="https://github.com/Hegxza/Pokminer-Releases/releases/tag/alpha-1.3.8">Release notes</a>
+            &middot;
             <a href="https://github.com/Hegxza/Pokminer-Releases/releases">All releases on GitHub</a>
           </p>
         </div>
@@ -132,26 +167,26 @@
       <ol class="steps">
         <li>
           <h3>Download</h3>
-          <p>Click <a href="#download">Download</a>. You get a single <code>.exe</code> file, no installer needed.</p>
+          <p>Choose your system above and download either the game or the launcher.</p>
         </li>
         <li>
-          <h3>Run it</h3>
-          <p>Windows may say <em>"Windows protected your PC"</em> because the game isn't signed. Click <strong>More info</strong>, then <strong>Run anyway</strong>.</p>
+          <h3>Extract and run</h3>
+          <p>Extract the downloaded archive, then open the game or launcher inside. On Linux, you may need to run <code>chmod +x PokMiner</code> for the game.</p>
         </li>
         <li>
           <h3>Play</h3>
-          <p>Keep the file somewhere handy, like your Desktop. The main menu tells you when a new version is out.</p>
+          <p>The launcher can install and update the game. If you run the game directly, its main menu tells you when a new version is out.</p>
         </li>
       </ol>
       <div class="requirements">
         <h3>Requirements</h3>
         <ul>
-          <li>Windows 10 or 11 (64-bit)</li>
+          <li>Windows 10 (32- or 64-bit), Windows 11 (64-bit), macOS (Intel or Apple Silicon), or Linux (64-bit x86)</li>
           <li>Keyboard and mouse</li>
           <li>Languages: English, Polski</li>
         </ul>
         <p class="note">
-          Some antivirus programs wrongly flag single-file games like this one.
+          Windows or macOS may warn that the app is unsigned; only open it if you trust the source.
           Only download PokMiner from this page or the official GitHub releases.
         </p>
       </div>

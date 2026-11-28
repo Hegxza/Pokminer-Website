@@ -1,5 +1,11 @@
 const VERSION_URL = "https://raw.githubusercontent.com/Hegxza/PokMiner-Version/refs/heads/main/version.json";
-const RELEASES_API = "https://api.github.com/repos/Hegxza/Pokminer-Releases/releases?per_page=100";
+const PLATFORM_NAMES = {
+  "windows-x64": "Windows 64-bit",
+  "windows-x86": "Windows 32-bit",
+  "macos-x64": "macOS Intel",
+  "macos-arm64": "macOS Apple Silicon",
+  "linux-x64": "Linux 64-bit",
+};
 
 function safeUrl(value) {
   try {
@@ -14,41 +20,57 @@ function prettyVersion(version) {
   return String(version).replace(/^alpha[_ ]/i, "Alpha ");
 }
 
-function formatSize(bytes) {
-  return `${Math.round(bytes / (1024 * 1024))} MB`;
-}
-
-function formatDate(iso) {
-  return new Date(iso).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" });
-}
-
-function showLatest(latest, news) {
-  const url = safeUrl(latest.download_url);
-  if (url) {
-    document.getElementById("download-button").href = url;
-  }
-  document.getElementById("download-label").textContent = `Download ${prettyVersion(latest.version || latest.id)}`;
-
+function showNews(news) {
   if (news) {
     document.getElementById("news-text").textContent = news;
     document.getElementById("news").hidden = false;
   }
 }
 
+function versionDownloads(entry) {
+  if ("downloads" in entry) {
+    if (!entry.downloads || typeof entry.downloads !== "object" || Array.isArray(entry.downloads)) {
+      console.warn("Invalid platform downloads for:", entry.id);
+      return [];
+    }
+
+    return Object.entries(entry.downloads).flatMap(([platform, download]) => {
+      const url = safeUrl(download?.url);
+      if (!url) {
+        console.warn("Invalid download URL for:", entry.id, platform);
+        return [];
+      }
+      return [{ label: PLATFORM_NAMES[platform] || platform, url }];
+    });
+  }
+
+  const url = safeUrl(entry.download_url);
+  if (!url) {
+    console.warn("Invalid download URL for:", entry.id);
+    return [];
+  }
+  return [{ label: "Windows", url }];
+}
+
 function showVersions(versions, latestId) {
   const list = document.getElementById("version-list");
-  list.replaceChildren();
+  const items = [];
 
   for (const entry of versions) {
-    const url = safeUrl(entry.download_url);
-    if (!url) {
+    if (!entry || typeof entry !== "object") {
+      console.warn("Invalid version entry:", entry);
+      continue;
+    }
+    const downloads = versionDownloads(entry);
+    if (!downloads.length) {
       continue;
     }
     const item = document.createElement("li");
 
+    const version = prettyVersion(entry.version || entry.id);
     const name = document.createElement("span");
     name.className = "version-name";
-    name.textContent = prettyVersion(entry.version || entry.id);
+    name.textContent = version;
     if (entry.id === latestId) {
       const tag = document.createElement("span");
       tag.className = "version-tag";
@@ -56,29 +78,37 @@ function showVersions(versions, latestId) {
       name.append(tag);
     }
 
-    const link = document.createElement("a");
-    link.className = "version-link";
-    link.href = url;
-    link.textContent = "Download";
+    const links = downloads.map(({ label, url }) => {
+      const link = document.createElement("a");
+      link.className = "version-link";
+      link.href = url;
+      link.textContent = label;
+      link.setAttribute("aria-label", `Download ${version} for ${label}`);
+      return link;
+    });
 
-    item.append(name, link);
-    list.append(item);
-  }
-}
-
-async function showReleaseDetails(downloadUrl) {
-  const response = await fetch(RELEASES_API);
-  if (!response.ok) {
-    return;
-  }
-  const releases = await response.json();
-  for (const release of releases) {
-    const asset = (release.assets || []).find((a) => a.browser_download_url === downloadUrl);
-    if (asset) {
-      const parts = ["Windows 10 / 11", formatSize(asset.size), formatDate(release.published_at)];
-      document.getElementById("download-meta").textContent = parts.join(" - ");
-      return;
+    if (links.length === 1) {
+      links[0].textContent += " download";
+      item.append(name, links[0]);
+    } else {
+      const details = document.createElement("details");
+      details.className = "version-downloads";
+      const summary = document.createElement("summary");
+      summary.textContent = "Platform downloads";
+      summary.setAttribute("aria-label", `Downloads for ${version}`);
+      const options = document.createElement("div");
+      options.className = "version-platforms";
+      options.append(...links);
+      details.append(summary, options);
+      item.append(name, details);
     }
+    items.push(item);
+  }
+
+  if (items.length) {
+    list.replaceChildren(...items);
+  } else {
+    console.warn("No valid PokMiner version downloads were found.");
   }
 }
 
@@ -94,9 +124,8 @@ async function loadVersions() {
     return;
   }
 
-  showLatest(latest, data.news);
+  showNews(data.news);
   showVersions(versions, latest.id);
-  showReleaseDetails(latest.download_url).catch(() => {});
 }
 
 function setupViewer() {
